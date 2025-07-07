@@ -10,7 +10,19 @@ export default defineConfig({
   projectId: 't083itg1',
   dataset: 'production',
 
-  plugins: [structureTool(), visionTool()],
+  plugins: [
+    structureTool({
+      structure: (S) =>
+        S.list()
+          .title('Контент')
+          .items([
+            S.listItem()
+              .title('Моделі')
+              .child(S.documentList().title('Моделі').filter('_type == "model"')),
+          ]),
+    }),
+    visionTool(),
+  ],
 
   schema: {
     types: schemaTypes,
