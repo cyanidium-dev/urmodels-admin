@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'Urmodels admin',
 
-  projectId: 't083itg1',
+  projectId: '6pyvqnua',
   dataset: 'production',
 
   plugins: [
