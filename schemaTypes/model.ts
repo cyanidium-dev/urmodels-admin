@@ -32,8 +32,14 @@ export default defineType({
       },
       validation: (rule) => rule.required(),
     }),
+    defineField({
+      name: 'order',
+      title: 'Порядок відображення',
+      type: 'number',
+      validation: (rule) => rule.min(1),
+      description: 'Менше число — вищий пріоритет у списку моделей',
+    }),
 
-    // Мультимовні параметри
     defineField({
       name: 'height',
       title: 'Зріст в сантиметрах',
